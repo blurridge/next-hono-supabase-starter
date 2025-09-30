@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000',
     credentials: true,
-  })
+  }),
 );
 
 // Mount your routes here

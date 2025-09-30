@@ -1,6 +1,6 @@
-import { createMiddleware } from 'hono/factory';
 import { createServerClient } from '@supabase/ssr';
 import { getCookie, setCookie } from 'hono/cookie';
+import { createMiddleware } from 'hono/factory';
 
 export const authMiddleware = createMiddleware(async (c, next) => {
   const supabase = createServerClient(
@@ -19,7 +19,7 @@ export const authMiddleware = createMiddleware(async (c, next) => {
           });
         },
       },
-    }
+    },
   );
 
   const {

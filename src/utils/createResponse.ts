@@ -3,8 +3,7 @@ export const RESPONSE_STATUS = {
   FAIL: 'fail',
 } as const;
 
-export type ResponseStatus =
-  (typeof RESPONSE_STATUS)[keyof typeof RESPONSE_STATUS];
+export type ResponseStatus = (typeof RESPONSE_STATUS)[keyof typeof RESPONSE_STATUS];
 
 export type ResponseType<T = unknown> = {
   status: ResponseStatus;
@@ -12,11 +11,7 @@ export type ResponseType<T = unknown> = {
   data: T | null;
 };
 
-export const createResponse = <T>(
-  status: ResponseStatus,
-  message: string,
-  data: T | null = null
-): ResponseType<T> => {
+export const createResponse = <T>(status: ResponseStatus, message: string, data: T | null = null): ResponseType<T> => {
   return {
     status,
     message,

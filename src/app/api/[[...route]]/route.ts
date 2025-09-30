@@ -1,4 +1,5 @@
 import { handle } from 'hono/vercel';
+
 import app from '@/lib/rpc';
 
 export const runtime = 'nodejs';

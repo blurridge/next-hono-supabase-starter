@@ -2,12 +2,10 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-8">
       <main className="flex flex-col items-center gap-8 text-center">
-        <h1 className="text-5xl font-bold tracking-tight">
-          Next.js + Hono + Supabase
-        </h1>
+        <h1 className="text-5xl font-bold tracking-tight">Next.js + Hono + Supabase</h1>
         <p className="max-w-2xl text-lg text-gray-600 dark:text-gray-400">
-          A modern full-stack starter template with Next.js 15, Hono RPC,
-          Supabase Auth, Drizzle ORM, and TanStack Query.
+          A modern full-stack starter template with Next.js 15, Hono RPC, Supabase Auth, Drizzle ORM, and TanStack
+          Query.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">
           <a

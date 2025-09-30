@@ -1,9 +1,8 @@
 import type { ClientResponse } from 'hono/client';
+
 import { RESPONSE_STATUS, type ResponseType } from './createResponse';
 
-export const parseApiResponse = async <T>(
-  fetchCall: Promise<ClientResponse<T>>
-): Promise<ResponseType<T>> => {
+export const parseApiResponse = async <T>(fetchCall: Promise<ClientResponse<T>>): Promise<ResponseType<T>> => {
   try {
     const response = await fetchCall;
 
