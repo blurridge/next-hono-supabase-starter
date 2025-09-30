@@ -1,14 +1,15 @@
+import { Hono } from 'hono';
+import { cors } from 'hono/cors';
+import { logger } from 'hono/logger';
 import { handle } from 'hono/vercel';
 
-import app from '@/lib/rpc';
+const app = new Hono().basePath('/api').use('*', logger()).use('*', cors());
 
-export const runtime = 'nodejs';
+const routes = app;
 
 export const GET = handle(app);
 export const POST = handle(app);
 export const PUT = handle(app);
-export const PATCH = handle(app);
 export const DELETE = handle(app);
 
-// Export the app type for RPC client type inference
-export type AppType = typeof app;
+export type AppType = typeof routes;
