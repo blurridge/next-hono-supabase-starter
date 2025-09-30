@@ -1,5 +1,5 @@
 import { createServerClient } from '@supabase/ssr';
-import { getCookie, setCookie } from 'hono/cookie';
+import { setCookie } from 'hono/cookie';
 import { createMiddleware } from 'hono/factory';
 
 export const authMiddleware = createMiddleware(async (c, next) => {
@@ -15,7 +15,8 @@ export const authMiddleware = createMiddleware(async (c, next) => {
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            setCookie(c, name, value, options);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            setCookie(c, name, value, options as any);
           });
         },
       },
